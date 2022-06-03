@@ -9,7 +9,7 @@ const Nav = ({inHeader,cosasParaMostrar,laClase}) => {
   //const {inHeader,cosasParaMostrar} = props
   /* const [] = arr */
   //console.log(inHeader,cosasParaMostrar)
-
+  
   if (inHeader) {
     return (
       <nav className={laClase}>
