@@ -49,10 +49,10 @@ const App = () => {
     <>
       <Header />
       <Main/>
-      <p>El contador va : {contador}</p>
+      {/* <p>El contador va : {contador}</p>
       <button onClick={aumentarContador}>aumentar</button>
       <button onClick={bajarContador}>disminuir</button>
-      <button>confirmar</button>
+      <button>confirmar</button> */}
       <Footer />
     </>
   )

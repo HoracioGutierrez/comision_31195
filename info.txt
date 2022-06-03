@@ -49,3 +49,59 @@ app -
       |_ widget
     |_ itemListContainer
       |_itemCount
+
+
+
+OPERADOR TERNARIO 
+
+(condición) ? (si se cumple) : (si no se cumple)
+
+condición ? hace esto if true : esto if false
+
+
+condición ? retorna esto if true : o esto if false
+
+
+const a = true ? console.log("Hola") : 2
+
+const a = if(true){ console.log("Hola") } else { return 2 }
+
+
+
+
+
+
+SENTENCIA Y EXPRESIONES
+
+
+const a = 1;
+
+console.log("Hola");
+
+
+const a = 1+1;
+
+
+const arr = [1,2,3]
+const aux = []
+arr.forEach()
+
+const aux = arr.map()
+
+
+
+function foo(){
+
+}
+
+const a = foo() // a = undefined
+
+
+IIFE : Imediatly Invoked Function Expression / Funciones autoinvocadas
+
+
+
+
+(function(){
+  
+})()
