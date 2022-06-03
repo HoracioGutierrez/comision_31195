@@ -1,17 +1,23 @@
+//import <algo> from "ruta relativa/ruta paquete"
+
+//Traigo la libreria de React
 import React from 'react';
+
+//Traigo la libreria de ReactDOM
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
+import App from "./App"
+
+import "./estilos.css"
+//Agarrar una app que ya exista de REACT
+/* function App () {
+  return "Hola Mundo con JSX"
+} */
+
+//const App = () => "Hola Mundo con JSX y Arrow Function"
+
+//Mostrar la APP en el DOM
+//Crea un punto inicial (root) en donde la App se va a montar (dibujar)
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(<App/>);

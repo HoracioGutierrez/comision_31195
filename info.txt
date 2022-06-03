@@ -1,0 +1,51 @@
+WEBPACK : src/index.js
+
+REACT : 
+
+REACT-DOM :
+REACT-NATIVE : 
+ELECTON : 
+
+
+
+
+Las aplicaciones de React se forman por uno o mas componentes : 
+
+1- Todos los componentes de React son Funciones
+2- Siempre arrancan en Mayuscula
+3- Todos los componentes tienen retorno
+4- Los componentes pueden retornar un UNICO elemento
+5- Todos pueden recibir props
+6- Todos pueden tener un estado
+
+
+
+
+
+
+const Foo = () => {}
+
+function Foo(){}
+
+
+JSX : JS and XML
+
+
+function foo(){}
+
+
+foo()   ===    <foo />
+
+
+HOOKS : Son funciones que incorportan nuevas herramientas en un componente, como por ejemplo la capacidad de tener estado, ciclos de vida, etc...
+
+
+
+Crear el componente ItemCount que tiene que estar dentro de ItemListContainer y tiene que tener un texto con 3 botones, aumentar - disminuir y confirmar y poder recibir 3 props : stock (numero) - initial(numero) y onAdd (funcion)
+
+
+app -
+    |_ navbar
+      |_ widget
+    |_ itemListContainer
+      |_itemCount
