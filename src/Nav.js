@@ -1,5 +1,6 @@
 
 const Nav = ({ inHeader, cosasParaMostrar, laClase }) => {
+
   return (
     <nav className={laClase}>
       <a href="#">{inHeader ? "link" : "facebook"}</a>

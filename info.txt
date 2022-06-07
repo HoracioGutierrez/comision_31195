@@ -37,7 +37,12 @@ function foo(){}
 foo()   ===    <foo />
 
 
-HOOKS : Son funciones que incorportan nuevas herramientas en un componente, como por ejemplo la capacidad de tener estado, ciclos de vida, etc...
+HOOKS : Son funciones que incorporan nuevas herramientas en un componente, como por ejemplo la capacidad de tener estado, ciclos de vida, etc...
+
+
+1) Solo van adentro de un componente
+2) No pueden estar en condiciones ni bucles
+3) Todos son funciones entonces se ejecutan
 
 
 
@@ -105,3 +110,74 @@ IIFE : Imediatly Invoked Function Expression / Funciones autoinvocadas
 (function(){
   
 })()
+
+
+
+class App extends Component {
+
+  constructor(){}
+
+  render() {}
+
+  componentDidMount() {}
+
+  componentDidUpdate() {}
+
+  componentWillUnmount() {}
+
+
+}
+
+
+
+
+const Usuarios = () => {
+
+  const cargando = useState(true)
+
+  useEffect(()=>{
+    //ya consegui los usuarios!
+  })
+
+  if(cargando){
+    return (
+      <ul>
+        cargando...
+      </ul>  
+    )
+  }else{
+    return (
+      usuarios...
+    )
+  }
+}
+
+
+1ER CICLO DE VIDA :
+1- Carga Usuarios
+2- Crea el estado por primera vez (con true)
+3- Se evalua por primera vez el condicional 
+4- Se muestra cargando (renderizado)
+5- Se activa el efecto
+6- Modifico el estado
+
+
+2DO CICLO DE VIDA :
+1- Carga Usuarios
+2- Se cambia el valor a false del estado
+3- Se evalua el condicional de nuevo , ahora cae en el else porque el estado es false
+4- Se vuelve a ejecutar el efecto
+
+
+
+PATRON CONTAINER 
+
+
+
+Promise
+
+const promesa = new Promise((res,rej)=>{})
+
+
+promesa.then(()=>{})
+promesa.catch(()=>{})
