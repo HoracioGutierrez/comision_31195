@@ -7,7 +7,6 @@ const Footer = () => {
       <p>Copyright &copy;</p>
       <Nav 
       inHeader={false} 
-      cosasParaMostrar={["facebook","instagram"]}
       laClase="navbar-footer"
       />
     </footer>

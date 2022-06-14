@@ -1,44 +1,61 @@
 import { useEffect, useState } from "react"
 import ItemCount from "./ItemCount"
+import { productos } from "./productos"
+import ItemList from "./ItemList"
+import { useParams } from "react-router-dom"
 
 
 const ItemListContainer = ({ greeting }) => {
-
+  
+  //Habia Estados
   const [items, setItems] = useState([])
+  const resultado = useParams()
 
-  useEffect(()=>{
-    
-    const MockAsync = new Promise((res)=>{
-      setTimeout(()=>{
+  //console.log(resultado)
+
+  /* if(?){
+//pido todo
+  }else{
+    //pido por categoria
+  } */
+
+  //Habia Efectos
+  useEffect(() => {
+
+    console.log(resultado)
+
+    fetch("https://fakestoreapi.com/products")
+      .then((respuesta) => {
+        const p = respuesta.json()
+        return p
+      })
+      .then((productos) => {
+        setItems(productos)
+      })
+      .catch((error) => {
+        console.log("Hubo un error")
+      })
+
+
+      
+ /* const MockAsync = new Promise((res) => {
+      setTimeout(() => {
         console.log("pidiendo Productos...")
         const productosDeDB = ["Producto 1", "Producto 2", "Producto 3"]
         res(productosDeDB)
-      },2000)
+      }, 2000)
     })
 
     MockAsync.then(productos => {
       setItems(productos)
-    })
+    }) */
+   
 
-  },[])
+  }, [])
 
-  const onAdd = () => {  }
-
-  if(items.length > 0 ){
-    return (
-      <div>
-        <h2>{greeting}</h2>
-        <ItemCount stock={5} onAdd={onAdd} initial={0} />
-      </div>
-    )
-  }else{
-    return (
-      <div>
-        <h2>{greeting}</h2>
-        <p>Cargando...</p>
-      </div>
-    )
-  }
+  return (
+    <ItemList items={items} />
+  )
 }
 
 export default ItemListContainer

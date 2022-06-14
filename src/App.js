@@ -1,22 +1,16 @@
 import Header from "./Header"
 import Footer from "./Footer"
 import Main from "./Main"
-//import { useEffect } from "react"
+import { BrowserRouter } from "react-router-dom"
 
 const App = () => {
 
-  //useEffect : Nos permite ejecutar una funcion despues de cada renderizacion
-  //useEffect(function [,array])
-  /* useEffect(()=>{
-    console.log("Hola")
-  }) */
-  
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <Main/>
+      <Main />
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 

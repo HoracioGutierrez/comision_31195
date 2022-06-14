@@ -1,11 +1,12 @@
+import {Link,NavLink} from "react-router-dom"
 
-const Nav = ({ inHeader, cosasParaMostrar, laClase }) => {
+const Nav = ({ inHeader, laClase }) => {
 
   return (
     <nav className={laClase}>
-      <a href="#">{inHeader ? "link" : "facebook"}</a>
-      <a href="#">{inHeader ? "link" : "instagram"}</a>
-      <a href="#">{inHeader ? "link" : "linkedin"}</a>
+      <NavLink to="/categoria/jewelery">{inHeader ? "jewelery" : "facebook"}</NavLink>
+      <NavLink to="/categoria/electronics">{inHeader ? "electronics" : "instagram"}</NavLink>
+      <NavLink to="/categoria/clothing">{inHeader ? "clothing" : "linkedin"}</NavLink>
     </nav>
   )
 }

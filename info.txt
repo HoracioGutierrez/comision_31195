@@ -181,3 +181,154 @@ const promesa = new Promise((res,rej)=>{})
 
 promesa.then(()=>{})
 promesa.catch(()=>{})
+
+
+
+const CustomFetch= (time,task) =>{
+
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+          let random = Math.random()
+          random > 0.5 ? resolve(task) : reject(task)
+        }, time);
+    })
+
+}
+
+const p = new Promise((res,rej)=>{
+    //?
+    //res()
+    //rej()
+})
+
+p.then(()=>{
+    console.log()
+})
+
+p.catch(()=>{
+    
+})
+
+
+FETCH : le das una direccion(url/ip) y las condiciones de la peticion
+
+TCP/IP : Transporte de datos / layer
+DNS : Dominio de nombres / layer
+
+FTP : File Transfer Protocol
+POP/IMAP/SMTP : Protocolo de correo
+SSH : Secure Shell
+HTTP/S : 
+
+
+REQUEST(CLIENTE)
+
+URL/IP  - METODO (GET-POST-DELETE-PUT) - version - 
+headers - body
+
+
+
+RESPONSE(SERVIDOR)
+
+version - CODIGO - MENSAJE
+headers - body
+
+content-type : application/exe
+
+
+
+CODIGOS DE STATUS : 
+
+
+1xx : Información
+
+2xx : Correcto
+  200 : OK
+  201 : Created
+
+3xx : Redirecciones
+  302 : Found
+  304 : Not Modified
+
+4xx : Errores del cliente
+  400 : Bad Request
+  401 : Unauthorized
+  403 : Forbidden
+  404 : Not Found
+  405 : Method Not Allowed
+
+
+5xx : Errores del servidor
+  500 : Internal Server Error
+  504 : Gateway Timeout
+
+
+
+fetch("https://fakestoreapi.com/products")
+
+fetch("https://fakestoreapi.com/products",{
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json" 
+        },
+    body: JSON.stringify({nombre:"usuario1",password:"123"})
+})
+
+
+const pedido = fetch()
+
+pedido.then()
+
+pedido.catch()
+
+
+
+//1) Hago el pedidod con Fecth : Como va a tardar me da una promesa, por eso el .then / .catch
+fetch("https://fakestoreapi.com/products")
+.then((respuesta)=>{
+    //2) Obtenemos y validamos la respuesta del servidor
+    //respuesta.json()/arrayBuffer()/text()/blob()
+    //3) Transformo la respuesta al formato que yo queria
+
+    console.log(respuesta.json())
+    console.log("Termino el pedido")
+
+})
+.catch((error)=>{
+    console.log("Hubo un error")
+})
+
+
+console.log("Hola")
+
+
+STACK                   WEB APIs
+
+                        fetch("https://fakestoreapi.com/products")
+
+
+
+
+
+
+
+.  === misma carpeta
+
+/  === raiz / entra a ...
+
+.. === carpeta padre
+
+
+
+
+ /* const MockAsync = new Promise((res) => {
+      setTimeout(() => {
+        console.log("pidiendo Productos...")
+        const productosDeDB = ["Producto 1", "Producto 2", "Producto 3"]
+        res(productosDeDB)
+      }, 2000)
+    })
+
+    MockAsync.then(productos => {
+      setItems(productos)
+    }) */
