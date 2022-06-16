@@ -22,8 +22,6 @@ const ItemListContainer = ({ greeting }) => {
   //Habia Efectos
   useEffect(() => {
 
-    console.log(resultado)
-
     fetch("https://fakestoreapi.com/products")
       .then((respuesta) => {
         const p = respuesta.json()
@@ -41,7 +39,7 @@ const ItemListContainer = ({ greeting }) => {
  /* const MockAsync = new Promise((res) => {
       setTimeout(() => {
         console.log("pidiendo Productos...")
-        const productosDeDB = ["Producto 1", "Producto 2", "Producto 3"]
+        const productosDeDB = [{titulo:"Producto 1",categoria:"cat1"}, "Producto 2", "Producto 3"]
         res(productosDeDB)
       }, 2000)
     })

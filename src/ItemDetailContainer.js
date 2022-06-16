@@ -1,24 +1,18 @@
 import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail"
-/* import productos from "./productos.json"
-
-console.log(productos) */
 
 const ItemDetailContainer = () => {
 
 
-  //Habia Estados
   const [item, setItem] = useState({})
+  const params = useParams()
+  //console.log(params)
 
-  //Habia Efectos
   useEffect(() => {
     fetch('https://fakestoreapi.com/products/1')
       .then(res => res.json())
       .then(json => setItem(json))
-
-
-    //Dejar ejemplo con Promise
-
   })
 
 

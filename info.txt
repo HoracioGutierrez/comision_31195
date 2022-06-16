@@ -332,3 +332,17 @@ STACK                   WEB APIs
     MockAsync.then(productos => {
       setItems(productos)
     }) */
+
+
+
+
+function foo(e){
+  console.log(e)
+}
+
+
+
+
+const btn = document.querySelector("button")
+btn.addEventListener("click",foo)
+
