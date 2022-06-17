@@ -9,4 +9,5 @@ const ItemList = ({items}) => {
     </section>
   )
 }
+
 export default ItemList
