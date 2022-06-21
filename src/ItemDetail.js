@@ -1,13 +1,15 @@
+import { useState } from "react"
 import ItemCount from "./ItemCount"
 
 const ItemDetail = ({ item }) => {
 
-  //State Uplifting
-  //1)Componente padre crea una funcion
+  const [cant, setCant] = useState(true)
+
   const onAdd = (cantidadSeleccionada) => {
-    console.log("Desde Item Detail : " + cantidadSeleccionada)
-    //Lo almaceno en un estado interno de ItemDetail
+    setCant(cantidadSeleccionada)
   }
+
+  //agregarAlCarrito
 
   return (
     <div>
@@ -15,7 +17,6 @@ const ItemDetail = ({ item }) => {
       <img className="detail-image" src={item.image} alt="thumbnail" />
       <p>{item.description}</p>
       <p>Precio : ${item.price}</p>
-      {/* 2) Componente padre le pasa la funcion al Hijo por prop */}
       <ItemCount initial={1} onAdd={onAdd} stock={5}/>
       <button>terminar mi compra</button>
     </div>

@@ -15,9 +15,6 @@ const ItemDetailContainer = () => {
 
     setLoading(true)
 
-    //console.log(productos.filter(productos=>productos.id == id)[0])
-    //console.log(productos.find(productos => productos.id == id))
-
     new Promise((res, rej) => {
       setTimeout(() => {
         res(productos.find(productos => productos.id == id))

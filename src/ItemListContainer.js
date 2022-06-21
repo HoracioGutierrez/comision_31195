@@ -13,15 +13,13 @@ const ItemListContainer = ({ greeting }) => {
   const { category } = useParams()
 
   useEffect(() => {
-
+    
     setLoading(true)
 
     new Promise((res, rej) => {
       setTimeout(() => {
-        res(category ? productos.filter((producto)=>{
-          
+        res(category ? productos.filter((producto) => {
           return producto.category == category
-
         }) : productos)
       }, 2000)
     })

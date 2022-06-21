@@ -1,14 +1,17 @@
 import Header from "./Header"
 import Footer from "./Footer"
 import Main from "./Main"
-import { BrowserRouter, useNavigate } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
+import { MiProvider } from "./MiContexto"
 
 const App = () => {
 
   return (
     <BrowserRouter>
-      <Header />
-      <Main />
+      <MiProvider>
+        <Header />
+        <Main />
+      </MiProvider>
       <Footer />
     </BrowserRouter>
   )
