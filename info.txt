@@ -346,3 +346,30 @@ function foo(e){
 const btn = document.querySelector("button")
 btn.addEventListener("click",foo)
 
+
+
+
+REST / SPREAD (...)
+
+
+
+
+
+
+
+function foo(...parametros){
+  cosnole.log(parametros.length)
+}
+
+foo(1,"Hola",true)
+
+
+const arr = [1,2,3]
+
+[...arr] //1,2,3
+
+const obj = {x:1,y:2,z:3}
+const copia = {...obj}
+
+
+

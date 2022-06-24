@@ -11,10 +11,28 @@ const ItemListContainer = ({ greeting }) => {
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
   const { category } = useParams()
+  //const [loadingText,setLoadingText] = useState("Cargando...")
+  //const loadingText = useRef("Cargando catálogo...");
+
+
+  //let mensaje = "Mensaje 1"
 
   useEffect(() => {
-    
-    setLoading(true)
+
+    setTimeout(()=>{
+      setLoading(false)
+    },3000)
+
+    if (category) {
+      //mensaje = "Cambio 1"
+      //setLoadingText("Cambio 1")
+      //loadingText.current = "Cargando catálogo...";
+      setItems("")
+    } else {
+      //mensaje = "Cambio 2"
+    }
+
+    /* setLoading(true)
 
     new Promise((res, rej) => {
       setTimeout(() => {
@@ -29,7 +47,7 @@ const ItemListContainer = ({ greeting }) => {
       })
       .catch(() => {
         //setItems([])
-      })
+      }) */
 
   }, [category])
 
@@ -37,7 +55,11 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <>
-      {loading ? <ProductLoader /> : <ItemList items={items} />}
+      {/* {loading ? <p className="rojo">Texto 1</p> : <p className="azul">Texto 1</p>} */}
+      {/* <p className={loading && "customClass"}>text 1</p> */}
+      {/* <p className={`baseClass ${loading ? "customClass" : ""}`}>text 1</p> */}
+      {/* {loading ? <ProductLoader /> : <ItemList items={items} />} */}
+      {/* {mensaje} */}
     </>
   )
 }
