@@ -5,33 +5,24 @@ import { contexto } from "./MiContexto"
 
 const Carrito = () => {
 
-  const {carrito} = useContext(contexto)
-  /* const [usuario,setUsuario] = useState({
-    nombre : "h",
-    tel : "",
-    email :""
-  }) */
-  const [nombre,setNombre] = useState("")
-  const [tel,setTel] = useState("")
-  const [email,setEmail] = useState("")
-
-  //useReducer()
+  const { carrito } = useContext(contexto)
+  const [nombre, setNombre] = useState("")
+  const [tel, setTel] = useState("")
+  const [email, setEmail] = useState("")
+  const [usuario, setUsuario] = useState({
+    nombre: "",
+    email: "",
+    telefono: ""
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    //console.dir(e.target)
-    //console.log(e.target.elements.nombre.value)
-    /* const nombre = e.target.elements.nombre.value
-    const tel = e.target.elements.telefono.value
-    const email = e.target.elements.email.value */
-
-    const usuario = { nombre , tel , email}
-    console.log(usuario)
+    //const usuario = { nombre, tel, email }
+    //console.log(usuario)
   }
 
   const handleClick = (e) => {
     e.preventDefault()
-    //e.target.value
   }
 
   const handleNombreChange = (e) => {
@@ -45,7 +36,23 @@ const Carrito = () => {
   const handleTelChange = (e) => {
     setTel(e.target.value)
   }
-  
+
+  const handleChange = (e) => {
+    //usuario.nombre
+    //usuario.e.target.id
+    //usuario{e.target.id}
+    //console.dir(e.target.id)
+    //usuario.nombre = ??
+    /*  const nombre = e.target.id
+     usuario.nombre */
+    //Object.assing()
+    /* const copia = { ...usuario }
+    copia[e.target.id] = e.target.value
+    setUsuario(copia) */
+    setUsuario({ ...usuario, [e.target.id] : e.target.value})
+    //{telefono:"",email:"", nombre : "horacio" }
+  }
+
   return (
     <div>
       <h1>Carrito</h1>
@@ -53,13 +60,13 @@ const Carrito = () => {
 
       <form onSubmit={handleSubmit}>
         <div>
-          <input onChange={handleNombreChange} type="text" id="nombre" placeholder="Nombre..." value={usuario.nombre}/>
+          <input onChange={handleChange} type="text" id="nombre" placeholder="Nombre..." value={nombre} />
         </div>
         <div>
-          <input onChange={handleEmailChange} type="email" id="email" placeholder="Email..." value={usuario.email}/>
+          <input onChange={handleChange} type="email" id="email" placeholder="Email..." value={email} />
         </div>
         <div>
-          <input onChange={handleTelChange} type="number" id="telefono" placeholder="Telefono..."/>
+          <input onChange={handleChange} type="number" id="telefono" placeholder="Telefono..." />
         </div>
         <button /* onClick={handleClick} */>comprar</button>
       </form>
