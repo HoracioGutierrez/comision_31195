@@ -20,6 +20,8 @@ export const MiProvider = ({children}) => {
 
         copia.push(nuevo_producto)
         setCarrito(copia)
+        setCantidadTotal(cantidad_total+cantidad)
+        setPrecioTotal(precio_total+cantidad*producto.precio)
     }
 
     const eliminarProducto = (producto) => {

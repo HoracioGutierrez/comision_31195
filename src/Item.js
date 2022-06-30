@@ -1,6 +1,8 @@
 import {Link} from "react-router-dom"
+import { db } from "./firebase"
 
 const Item = ({item}) => {
+  
   return (
     <article className="item">
       <h2>{item.title}</h2>
@@ -10,4 +12,9 @@ const Item = ({item}) => {
     </article>
   )
 }
+
 export default Item
+
+
+//SELECT nombre,edad FROM usuarios WHERE id = 1
+//db.usuarios.find({id:1})

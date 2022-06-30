@@ -373,3 +373,5 @@ const copia = {...obj}
 
 
 
+RELACIONAL / NO RELACIONAL
+
