@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react"
 import ItemCount from "./ItemCount"
-import { productos } from "./productos"
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 import { ProductLoader } from "./ProductLoader"
 import { db } from "./firebase"
-import { getDocs, collection , query , where } from "firebase/firestore"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 
 const ItemListContainer = ({ greeting }) => {
@@ -16,25 +15,46 @@ const ItemListContainer = ({ greeting }) => {
 
   useEffect(() => {
 
-    const collectionProductos = collection(db, "productos")
-    //const filtroDeLaConsulta = query(collectionProductos,where("price",">",100),where("category","==","clothing"))
-    const filtroDeLaConsulta = query(collectionProductos,where("price",">",100))
-    const consulta = getDocs(filtroDeLaConsulta)
+    if (category) {
+      const collectionProductos = collection(db, "productos")
+      const filtroDeLaConsulta = query(collectionProductos, where("price", ">", 100), where("category", "==", "clothing"))
+      const consulta = getDocs(filtroDeLaConsulta)
 
-    consulta
-      .then((resultado)=>{
-        const productos_mapeados = resultado.docs.map(referencia=>{
-          const aux = referencia.data()
-          aux.id = referencia.id
-          return aux
+      consulta
+        .then((resultado) => {
+          const productos_mapeados = resultado.docs.map(referencia => {
+            const aux = referencia.data()
+            aux.id = referencia.id
+            return aux
+          })
+          setItems(productos_mapeados)
+          setLoading(false)
+
         })
-        setItems(productos_mapeados)
-        setLoading(false)
+        .catch((error) => {
+          console.log(error)
+        })
+    } else {
 
-      })
-      .catch((error)=>{
-        console.log(error)
-      })
+      const collectionProductos = collection(db, "productos")
+      const consulta = getDocs(collectionProductos)
+
+      consulta
+        .then((resultado) => {
+          const productos_mapeados = resultado.docs.map(referencia => {
+            const aux = referencia.data()
+            aux.id = referencia.id
+            return aux
+          })
+          setItems(productos_mapeados)
+          setLoading(false)
+
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
+
 
   }, [category])
 

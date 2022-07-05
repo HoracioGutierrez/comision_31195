@@ -375,3 +375,10 @@ const copia = {...obj}
 
 RELACIONAL / NO RELACIONAL
 
+
+
+
+MD / MARKDOWN : Lenguaje informatico de marcado de texto
+
+
+BUILD / DEPLOY : 

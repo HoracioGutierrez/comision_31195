@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail"
-import { productos } from "./productos"
 import { SkeletonCard } from "./ProductLoader"
 import { db } from "./firebase"
 import { collection , getDoc , doc } from "firebase/firestore"
